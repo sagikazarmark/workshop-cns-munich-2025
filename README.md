@@ -2,7 +2,7 @@
 
 - Event: [CNS Munich 2025](https://cloudnativesummit.de)
 - Date: 2025-07-21
-- [Slides](https://slides.sagikazarmark.com/2025-06-05-accelerate-your-development-and-cicd-pipelines-with-dagger)
+- [Slides](https://slides.sagikazarmark.com/2025-07-21-accelerate-your-development-and-cicd-pipelines-with-dagger/#/title-slide)
 - [Lab](https://labs.iximiuz.com/trainings/2025-07-21-cns-munich-dagger-workshop-ff0b503c)
 
 ## Prerequisites
