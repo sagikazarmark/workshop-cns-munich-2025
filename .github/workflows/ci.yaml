@@ -1,0 +1,78 @@
+name: CI
+
+on:
+  push:
+    branches: [main, module4, module4-solution]
+  pull_request:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run pipeline
+        uses: dagger/dagger-for-github@8.0.0
+        with:
+          verb: call
+          args: build
+          version: "0.18.14"
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run pipeline
+        uses: dagger/dagger-for-github@8.0.0
+        with:
+          verb: call
+          args: test
+          version: "0.18.14"
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run pipeline
+        uses: dagger/dagger-for-github@8.0.0
+        with:
+          verb: call
+          args: lint
+          version: "0.18.14"
+
+  check:
+    name: Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run pipeline
+        uses: dagger/dagger-for-github@8.0.0
+        with:
+          verb: call
+          args: check
+          version: "0.18.14"
+
+  artifacts:
+    name: Artifacts
+    uses: ./.github/workflows/artifacts.yaml
+    with:
+      publish: ${{ github.event_name == 'push' }}
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+      security-events: write

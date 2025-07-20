@@ -1,0 +1,20 @@
+{
+  "name": "workshop",
+  "engineVersion": "v0.18.14",
+  "sdk": {
+    "source": "go"
+  },
+  "dependencies": [
+    {
+      "name": "go",
+      "source": "github.com/sagikazarmark/daggerverse/go",
+      "pin": "ceffda4aebd349a24fc00e591b4ed9b801535b65"
+    },
+    {
+      "name": "golangci-lint",
+      "source": "github.com/sagikazarmark/daggerverse/golangci-lint",
+      "pin": "ceffda4aebd349a24fc00e591b4ed9b801535b65"
+    }
+  ],
+  "source": ".dagger"
+}
